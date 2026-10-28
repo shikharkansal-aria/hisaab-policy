@@ -29,7 +29,7 @@
           Hisaab
         </a>
         <nav class="hx-links glass" aria-label="Main"><a href="#how">How it works</a><a href="#features">Features</a><a href="#privacy">Privacy</a></nav>
-        <a class="pill btn-white" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Get notified</a>
+        <a class="pill btn-white" href="#notify">Get notified</a>
       </div>
 
       <div class="hx-stage">
@@ -50,7 +50,7 @@
         <h1 id="headline">Know what you can spend today.</h1>
         <p class="hx-lede" data-in="up">Hisaab takes out your bills and planned buys first, then splits the rest over the days left in the month. Everything stays on your phone.</p>
         <div class="hx-actions">
-          <a class="pill btn-mint" data-wipe href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Tell me when it's out</a>
+          <a class="pill btn-mint" data-wipe href="#notify">Tell me when it's out</a>
           <a class="pill btn-glass glass" data-wipe href="#how">See how it works</a>
         </div>
       </div>
@@ -89,7 +89,7 @@
       <div class="wrap">
         <div class="row-head" data-reveal>
           <h2 style="margin:0">Built around one number</h2>
-          <a class="pill pill-dark" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Get notified</a>
+          <a class="pill pill-dark" href="#notify">Get notified</a>
         </div>
         <div class="features">
           <article class="feature f-today" data-reveal>
@@ -140,9 +140,15 @@
     <section class="closing" style="padding-top:0">
       <div class="wrap" data-reveal>
         <h2>Hisaab is in private testing</h2>
-        <p class="lead" style="margin:0 auto">It is coming to Google Play first, and to iPhone after that. Leave your email and you will hear when it is out.</p>
+        <p class="lead" style="margin:0 auto">It is coming to Google Play first, and to iPhone after that. Leave your email and you will hear once, when it is out. Nothing else.</p>
         <div class="hero-actions">
-          <a class="pill pill-dark" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Tell me when it's out</a>
+          <form class="notify" id="notify" name="notify" method="POST" action="thanks/" data-netlify="true" netlify-honeypot="company">
+            <input type="hidden" name="form-name" value="notify">
+            <p hidden><label>Leave this empty <input name="company"></label></p>
+            <label class="sr" for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+            <button class="pill pill-dark" type="submit">Tell me when it's out</button>
+          </form>
         </div>
       </div>
     </section>

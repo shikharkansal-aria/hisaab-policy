@@ -2,6 +2,15 @@
 import { animate, scroll, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.17/+esm";
 
 window.__motion = true;
+
+// GitHub Pages cannot receive forms, so there the sign-up opens an email instead.
+const form = document.getElementById("notify");
+if (form && !location.hostname.endsWith("netlify.app")) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    location.href = "mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab&body=" + encodeURIComponent(form.email.value);
+  });
+}
 const animOn = document.documentElement.classList.contains("anim");
 const EXPO = [0.16, 1, 0.3, 1];
 const SHUTTER = [0.76, 0, 0.24, 1];
