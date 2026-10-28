@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hisaab: know what you can spend today</title>
-  <meta name="description" content="Hisaab shows how much money you have left today, so your month lasts. After every UPI payment it asks what it was for. All data stays on your phone.">
+  <meta name="description" content="Hisaab shows how much money you can spend today, so your month lasts. After every UPI payment it asks what it was for. All data stays on your phone.">
   <meta property="og:title" content="Hisaab">
-  <meta property="og:description" content="Know how much you can spend today. Your money data stays on your phone.">
+  <meta property="og:description" content="Know what you can spend today. Your money data stays on your phone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
   <link rel="stylesheet" href="styles.css">
   <script>
     // Hide reveal items only if we will animate them; show everything if Motion fails to load.
@@ -17,85 +20,138 @@
   </script>
 </head>
 <body>
-  <div class="wrap">
-    <header class="bar">
-      <a class="brand" href="./"><span class="brand-dot" aria-hidden="true"></span>Hisaab</a>
-      <nav><a href="#how">How it works</a><a href="privacy/">Privacy</a></nav>
-    </header>
+  <header class="hx">
+    <div class="hx-grid" id="grid" aria-hidden="true"></div>
+    <div class="hx-inner">
+      <div class="hx-nav" data-in="down">
+        <a class="hx-brand" href="./">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.4"/><path d="M12 3a9 9 0 0 1 8.5 12" fill="none" stroke="#5be3ad" stroke-width="2.4" stroke-linecap="round"/></svg>
+          Hisaab
+        </a>
+        <nav class="hx-links glass" aria-label="Main"><a href="#how">How it works</a><a href="#features">Features</a><a href="#privacy">Privacy</a></nav>
+        <a class="pill btn-white" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Get notified</a>
+      </div>
 
-    <main>
-      <div class="hero">
-        <div>
-          <span class="pill" data-reveal>In private testing on Android. iPhone later.</span>
-          <h1 data-reveal>Know how much you can spend today.</h1>
-          <p class="lead" data-reveal>Hisaab takes the money you have left this month, sets aside your fixed bills and planned buys, and splits the rest over the days left. One number for today, so your month lasts.</p>
-          <div data-reveal>
-            <a class="cta" href="mailto:shikharkansal.sk@gmail.com?subject=Hisaab">Ask to try Hisaab</a>
-            <span class="cta-note">No account. No ads. Your data never leaves your phone.</span>
+      <div class="hx-stage">
+        <div class="ring" role="img" aria-label="Example: 486 rupees left to spend today, 17 of 30 days of the month on track.">
+          <svg viewBox="-60 -60 120 120" id="ring" aria-hidden="true"></svg>
+          <div class="ring-center" aria-hidden="true">
+            <div class="ring-num">&#8377;<span id="today">486</span></div>
+            <div class="ring-sub">LEFT TODAY &middot; EXAMPLE</div>
           </div>
-        </div>
-
-        <div data-reveal>
-          <div class="phone" role="img" aria-label="Example Hisaab screen: 486 rupees left today, a week of day rings, and a card asking what a payment was for.">
-            <div class="screen" aria-hidden="true">
-              <div class="screen-label">Today</div>
-              <div class="today">
-                <div class="today-num">&#8377;<span id="today">486</span></div>
-                <div class="today-sub">left to spend today</div>
-              </div>
-              <div class="rings"><span></span><span></span><span></span><span></span><span class="part"></span><span class="todo"></span><span class="todo"></span></div>
-              <div class="ask" id="ask">
-                <div class="ask-top"><span>Hisaab</span><span>now</span></div>
-                <div class="ask-q">&#8377;120 paid. What was that for?</div>
-                <div class="ask-input"><span id="typed">lunch with friends</span><span class="caret"></span></div>
-              </div>
-            </div>
-          </div>
-          <p class="example">Example screen with made-up numbers.</p>
+          <div class="node n1" data-node><b>[ TODAY ]</b><span>Money left this month over the days left, after bills and planned buys.</span></div>
+          <div class="node n2" data-node><b>[ WHAT WAS THAT FOR? ]</b><span>Asked after a UPI payment. You type the answer.</span></div>
+          <div class="node n3" data-node><b>[ ON YOUR PHONE ]</b><span>No account, no upload, no ads.</span></div>
         </div>
       </div>
 
-      <section id="how">
-        <h2 data-reveal>How it works</h2>
-        <p class="section-lead" data-reveal>Three simple ideas. No spreadsheets, no bank login.</p>
-        <div class="cards">
-          <article class="card" data-reveal>
-            <span class="num">1</span>
-            <h3>One number for today</h3>
-            <p>Money left this month, divided by the days left, after your bills and planned buys. Spend more one day and tomorrow's number adjusts. Go past it and Hisaab says "Over by", not a scary minus.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="num">2</span>
-            <h3>"What was that for?"</h3>
-            <p>After a UPI payment, Hisaab asks what it was for. You type the answer in your own words. No preset buttons, so your history reads like you wrote it.</p>
-          </article>
-          <article class="card" data-reveal>
-            <span class="num">3</span>
-            <h3>Sets that remember</h3>
-            <p>Each payment sits in a set like food or travel, remembered for that payee. Money you move, like savings, EMIs, card bills or transfers between your own accounts, never counts as spent.</p>
-          </article>
+      <div class="hx-copy">
+        <p class="hx-eyebrow" data-in="up">01. YOUR DAILY NUMBER</p>
+        <h1 id="headline">Know what you can spend today.</h1>
+        <p class="hx-lede" data-in="up">Hisaab takes out your bills and planned buys first, then splits the rest over the days left in the month. Everything stays on your phone.</p>
+        <div class="hx-actions">
+          <a class="pill btn-mint" data-wipe href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Tell me when it's out</a>
+          <a class="pill btn-glass glass" data-wipe href="#how">See how it works</a>
         </div>
-      </section>
+      </div>
 
-      <section>
-        <div class="privacy-band" data-reveal>
-          <h2>Your money stays on your phone.</h2>
-          <p class="section-lead">Hisaab is built so there is nothing to leak. The Google Play version does not even ask for internet access.</p>
-          <ul class="checks">
-            <li>No account<span>Open the app and start. No sign up, no phone number, no email.</span></li>
-            <li>No upload<span>Payments and reasons are stored only on your phone.</span></li>
-            <li>No ads, no tracking<span>No ad or analytics tools inside the app.</span></li>
-            <li>No AI cloud<span>No AI service ever reads your spending.</span></li>
+      <aside class="chamfer" data-in="left" aria-label="Status">
+        <span class="badge">IN PRIVATE TESTING</span>
+        <div class="body">
+          <svg viewBox="0 0 300 150" preserveAspectRatio="none" aria-hidden="true"><polygon points="0.5,0.5 299.5,0.5 299.5,149.5 26,149.5 0.5,124" fill="none" stroke="#5be3ad" vector-effect="non-scaling-stroke"/></svg>
+          <p>Coming soon to Google Play. The iPhone version is in the works. Your money data never leaves your phone.</p>
+          <a href="privacy/">READ THE PRIVACY POLICY &rarr;</a>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="how">
+      <div class="wrap question">
+        <div data-reveal>
+          <h2>One question after every UPI payment</h2>
+          <p class="lead">When you pay, Hisaab asks what it was for. You type the answer in your own words. There are no preset buttons, so your list of payments reads the way you think about your money.</p>
+          <ul>
+            <li>Each payment goes into a set, like food or travel, and Hisaab remembers it for that payee.</li>
+            <li>Savings, EMIs, card bills and transfers between your own accounts are not counted as spending.</li>
           </ul>
-          <p style="margin:24px 0 0"><a href="privacy/">Read the privacy policy</a></p>
         </div>
-      </section>
-    </main>
+        <div class="answers" data-reveal aria-label="Example answers to the question">
+          <p class="q">What was that for?</p>
+          <div class="a"><span id="cycle">auto to college</span><span class="caret"></span></div>
+          <small>Example answers. You write your own.</small>
+        </div>
+      </div>
+    </section>
 
+    <section id="features" style="padding-top:0">
+      <div class="wrap">
+        <div class="row-head" data-reveal>
+          <h2 style="margin:0">Built around one number</h2>
+          <a class="pill pill-dark" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Get notified</a>
+        </div>
+        <div class="features">
+          <article class="feature f-today" data-reveal>
+            <svg class="art" viewBox="0 0 260 340" aria-hidden="true"><circle cx="130" cy="140" r="78" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="14"/><circle cx="130" cy="140" r="78" fill="none" stroke="#fff" stroke-width="14" stroke-dasharray="320 490" stroke-linecap="round" transform="rotate(-90 130 140)"/><text x="130" y="154" text-anchor="middle" fill="#fff" font-family="Instrument Serif, Georgia, serif" font-size="44">&#8377;486</text></svg>
+            <h3>Today's number</h3>
+            <p>Money left this month, divided by the days left, after your bills and planned buys. Overspend one day and Hisaab shows how much you are over by.</p>
+          </article>
+          <article class="feature f-type" data-reveal>
+            <svg class="art" viewBox="0 0 260 340" aria-hidden="true"><rect x="40" y="96" width="180" height="56" rx="12" fill="none" stroke="#2fbf8a" stroke-width="3"/><text x="58" y="131" fill="#fff" font-family="Inter, sans-serif" font-size="16">groceries for the we</text><rect x="214" y="112" width="2" height="24" fill="#2fbf8a"/></svg>
+            <h3>Your own words</h3>
+            <p>Type why you paid, the way you would tell a friend. Your history stays easy to read months later.</p>
+          </article>
+          <article class="feature f-sets" data-reveal>
+            <h3>Sets</h3>
+            <div class="donut-card" aria-hidden="true">
+              <b>This month</b><span>Example</span><br>
+              <svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#d5e6ef" stroke-width="6"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#2fbf8a" stroke-width="6" stroke-dasharray="45 55" stroke-dashoffset="25"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#138a5e" stroke-width="6" stroke-dasharray="25 75" stroke-dashoffset="80"/></svg>
+            </div>
+            <p>See where the month went: food, travel, rent and the sets you make.</p>
+          </article>
+          <article class="feature f-private" data-reveal>
+            <svg class="art" viewBox="0 0 260 340" aria-hidden="true"><rect x="86" y="120" width="88" height="70" rx="12" fill="none" stroke="#8be8c2" stroke-width="4"/><path d="M104 120 v-18 a26 26 0 0 1 52 0 v18" fill="none" stroke="#8be8c2" stroke-width="4"/><circle cx="130" cy="152" r="7" fill="#8be8c2"/></svg>
+            <h3>Stays on your phone</h3>
+            <p>No account, no ads, no upload. The Google Play version does not ask for internet access.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" style="padding-top:0">
+      <div class="wrap">
+        <div class="vault" data-reveal>
+          <div>
+            <h2>Your money data stays with you</h2>
+            <p class="lead">Hisaab keeps your payments and answers in the app's own storage on your phone. Nobody else sees them, including us.</p>
+            <p style="margin:20px 0 0"><a href="privacy/">Read the privacy policy</a></p>
+          </div>
+          <ul class="checks">
+            <li>No account<span>You don't sign up with a phone number or email.</span></li>
+            <li>No upload<span>Payments and reasons are stored only on your phone.</span></li>
+            <li>No ads or tracking<span>The app has no ad or analytics tools inside.</span></li>
+            <li>No AI service<span>Your spending is not sent to any AI service.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" style="padding-top:0">
+      <div class="wrap" data-reveal>
+        <h2>Hisaab is in private testing</h2>
+        <p class="lead" style="margin:0 auto">It is coming to Google Play first, and to iPhone after that. Leave your email and you will hear when it is out.</p>
+        <div class="hero-actions">
+          <a class="pill pill-dark" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Tell me when it's out</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="wrap">
     <footer>
-      <a href="privacy/">Privacy policy</a>
-      <a href="mailto:shikharkansal.sk@gmail.com">Contact</a>
-      <div style="margin-top:10px">&copy; 2026 Hisaab, made in India by Shikhar Kansal.</div>
+      <span>&copy; 2026 Hisaab. Made in India by Shikhar Kansal.</span>
+      <span><a href="privacy/">Privacy policy</a><a href="mailto:shikharkansal.sk@gmail.com">Contact</a></span>
     </footer>
   </div>
 
