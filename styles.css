@@ -53,6 +53,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--mint); outline-
 /* Hero (dark, full screen) */
 .hx { position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden; background: #05130f; color: #f2fbf7; isolation: isolate; }
 
+.hx-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
 .hx-grid { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 
 .hx-grid .v, .hx-grid .h { position: absolute; background: rgba(255, 255, 255, 0.06); }
@@ -113,7 +115,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--mint); outline-
 
 .hx-stage { grid-column: 2; grid-row: 2 / 4; position: relative; display: grid; place-items: center; min-height: 420px; }
 
-.ring { width: min(42vw, 470px); aspect-ratio: 1; position: relative; }
+.ring { width: min(42vw, 470px, 50vh); aspect-ratio: 1; position: relative; }
 
 .ring svg { width: 100%; height: 100%; overflow: visible; }
 
