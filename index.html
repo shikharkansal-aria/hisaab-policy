@@ -3,93 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hisaab Privacy Policy</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 24px;
-      background: #dceffa;
-      color: #203238;
-      font: 16px/1.6 Arial, sans-serif;
+  <title>Hisaab: know what you can spend today</title>
+  <meta name="description" content="Hisaab shows how much money you have left today, so your month lasts. After every UPI payment it asks what it was for. All data stays on your phone.">
+  <meta property="og:title" content="Hisaab">
+  <meta property="og:description" content="Know how much you can spend today. Your money data stays on your phone.">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Hide reveal items only if we will animate them; show everything if Motion fails to load.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("anim");
+      setTimeout(function () { if (!window.__motion) document.documentElement.classList.remove("anim"); }, 2500);
     }
-
-    main {
-      max-width: 760px;
-      margin: auto;
-      padding: 28px;
-      background: white;
-      border-radius: 16px;
-    }
-
-    h1,
-    h2 {
-      color: #16865b;
-    }
-  </style>
+  </script>
 </head>
 <body>
-  <main>
-    <h1>Hisaab Privacy Policy</h1>
+  <div class="wrap">
+    <header class="bar">
+      <a class="brand" href="./"><span class="brand-dot" aria-hidden="true"></span>Hisaab</a>
+      <nav><a href="#how">How it works</a><a href="privacy/">Privacy</a></nav>
+    </header>
 
-    <p>Last updated: 12 October 2026</p>
+    <main>
+      <div class="hero">
+        <div>
+          <span class="pill" data-reveal>In private testing on Android. iPhone later.</span>
+          <h1 data-reveal>Know how much you can spend today.</h1>
+          <p class="lead" data-reveal>Hisaab takes the money you have left this month, sets aside your fixed bills and planned buys, and splits the rest over the days left. One number for today, so your month lasts.</p>
+          <div data-reveal>
+            <a class="cta" href="mailto:shikharkansal.sk@gmail.com?subject=Hisaab">Ask to try Hisaab</a>
+            <span class="cta-note">No account. No ads. Your data never leaves your phone.</span>
+          </div>
+        </div>
 
-    <p>
-      Hisaab is made by Shikhar Kansal. If you have questions, contact
-      <a href="mailto:shikharkansal.sk@gmail.com">
-        shikharkansal.sk@gmail.com
-      </a>.
-    </p>
+        <div data-reveal>
+          <div class="phone" role="img" aria-label="Example Hisaab screen: 486 rupees left today, a week of day rings, and a card asking what a payment was for.">
+            <div class="screen" aria-hidden="true">
+              <div class="screen-label">Today</div>
+              <div class="today">
+                <div class="today-num">&#8377;<span id="today">486</span></div>
+                <div class="today-sub">left to spend today</div>
+              </div>
+              <div class="rings"><span></span><span></span><span></span><span></span><span class="part"></span><span class="todo"></span><span class="todo"></span></div>
+              <div class="ask" id="ask">
+                <div class="ask-top"><span>Hisaab</span><span>now</span></div>
+                <div class="ask-q">&#8377;120 paid. What was that for?</div>
+                <div class="ask-input"><span id="typed">lunch with friends</span><span class="caret"></span></div>
+              </div>
+            </div>
+          </div>
+          <p class="example">Example screen with made-up numbers.</p>
+        </div>
+      </div>
 
-    <h2>What Hisaab reads</h2>
-    <p>
-      Hisaab reads payment-related notifications and app-usage events on your
-      Android phone. These may include bank payment notifications and payment
-      alerts from UPI apps.
-    </p>
+      <section id="how">
+        <h2 data-reveal>How it works</h2>
+        <p class="section-lead" data-reveal>Three simple ideas. No spreadsheets, no bank login.</p>
+        <div class="cards">
+          <article class="card" data-reveal>
+            <span class="num">1</span>
+            <h3>One number for today</h3>
+            <p>Money left this month, divided by the days left, after your bills and planned buys. Spend more one day and tomorrow's number adjusts. Go past it and Hisaab says "Over by", not a scary minus.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="num">2</span>
+            <h3>"What was that for?"</h3>
+            <p>After a UPI payment, Hisaab asks what it was for. You type the answer in your own words. No preset buttons, so your history reads like you wrote it.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="num">3</span>
+            <h3>Sets that remember</h3>
+            <p>Each payment sits in a set like food or travel, remembered for that payee. Money you move, like savings, EMIs, card bills or transfers between your own accounts, never counts as spent.</p>
+          </article>
+        </div>
+      </section>
 
-    <h2>Why Hisaab reads it</h2>
-    <p>
-      Hisaab uses this information to notice UPI payment activity and ask what
-      a payment was for. It also shows your recorded payments in the app.
-    </p>
+      <section>
+        <div class="privacy-band" data-reveal>
+          <h2>Your money stays on your phone.</h2>
+          <p class="section-lead">Hisaab is built so there is nothing to leak. The Google Play version does not even ask for internet access.</p>
+          <ul class="checks">
+            <li>No account<span>Open the app and start. No sign up, no phone number, no email.</span></li>
+            <li>No upload<span>Payments and reasons are stored only on your phone.</span></li>
+            <li>No ads, no tracking<span>No ad or analytics tools inside the app.</span></li>
+            <li>No AI cloud<span>No AI service ever reads your spending.</span></li>
+          </ul>
+          <p style="margin:24px 0 0"><a href="privacy/">Read the privacy policy</a></p>
+        </div>
+      </section>
+    </main>
 
-    <h2>Where it is stored</h2>
-    <p>
-      Your Hisaab data is stored on your phone. This version does not require
-      an account and does not send this data to a Hisaab server.
-    </p>
+    <footer>
+      <a href="privacy/">Privacy policy</a>
+      <a href="mailto:shikharkansal.sk@gmail.com">Contact</a>
+      <div style="margin-top:10px">&copy; 2026 Hisaab, made in India by Shikhar Kansal.</div>
+    </footer>
+  </div>
 
-    <h2>What is shared</h2>
-    <p>
-      Hisaab does not sell or share your payment data with other companies.
-      This version has no advertising.
-    </p>
-
-    <h2>How to delete your data</h2>
-    <p>
-      You can delete your Hisaab data using the delete option inside the app.
-    </p>
-
-    <h2>Your rights</h2>
-    <p>
-      You can choose whether to grant Hisaab access to notifications and
-      app-usage information. You can withdraw permissions in Android Settings
-      and delete your data in the app.
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-      For privacy questions, email
-      <a href="mailto:shikharkansal.sk@gmail.com">
-        shikharkansal.sk@gmail.com
-      </a>.
-    </p>
-
-    <h2>Changes</h2>
-    <p>
-      If this policy changes, the updated version will be published on this
-      page with a new date.
-    </p>
-  </main>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
