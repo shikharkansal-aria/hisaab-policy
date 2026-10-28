@@ -9,7 +9,7 @@
   <meta property="og:description" content="Know what you can spend today. Your money data stays on your phone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
   <link rel="stylesheet" href="styles.css">
   <script>
     // Hide reveal items only if we will animate them; show everything if Motion fails to load.
@@ -20,61 +20,49 @@
   </script>
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap">
-      <div class="bar">
-        <a class="brand" href="./">Hisaab</a>
-        <nav aria-label="Main"><a href="#how">How it works</a><a href="#features">Features</a><a href="#privacy">Privacy</a></nav>
-        <a class="pill pill-dark" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Get notified</a>
+  <header class="hx">
+    <div class="hx-grid" id="grid" aria-hidden="true"></div>
+    <div class="hx-inner">
+      <div class="hx-nav" data-in="down">
+        <a class="hx-brand" href="./">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.4"/><path d="M12 3a9 9 0 0 1 8.5 12" fill="none" stroke="#5be3ad" stroke-width="2.4" stroke-linecap="round"/></svg>
+          Hisaab
+        </a>
+        <nav class="hx-links glass" aria-label="Main"><a href="#how">How it works</a><a href="#features">Features</a><a href="#privacy">Privacy</a></nav>
+        <a class="pill btn-white" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Get notified</a>
       </div>
 
-      <div class="hero-copy">
-        <h1 data-reveal>Know what you can spend today, and make your month last</h1>
-        <p class="hero-sub" data-reveal>Hisaab takes out your bills and planned buys first, then splits the rest over the days left in the month. Everything stays on your phone.</p>
-        <div data-reveal>
-          <div class="hero-actions">
-            <a class="pill pill-light" href="#how">See how it works</a>
-            <a class="pill pill-dark" href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Tell me when it's out</a>
+      <div class="hx-stage">
+        <div class="ring" role="img" aria-label="Example: 486 rupees left to spend today, 17 of 30 days of the month on track.">
+          <svg viewBox="-60 -60 120 120" id="ring" aria-hidden="true"></svg>
+          <div class="ring-center" aria-hidden="true">
+            <div class="ring-num">&#8377;<span id="today">486</span></div>
+            <div class="ring-sub">LEFT TODAY &middot; EXAMPLE</div>
           </div>
-          <span class="status">Coming soon to Google Play. iPhone version in the works.</span>
+          <div class="node n1" data-node><b>[ TODAY ]</b><span>Money left this month over the days left, after bills and planned buys.</span></div>
+          <div class="node n2" data-node><b>[ WHAT WAS THAT FOR? ]</b><span>Asked after a UPI payment. You type the answer.</span></div>
+          <div class="node n3" data-node><b>[ ON YOUR PHONE ]</b><span>No account, no upload, no ads.</span></div>
         </div>
       </div>
 
-      <div class="hero-cards" role="img" aria-label="Example Hisaab screens: 486 rupees left today, 17 days your money lasted, and a card asking what a 120 rupee payment was for.">
-        <div class="mini" data-card aria-hidden="true">
-          <div class="mini-head">Left today <span class="tag">Example</span></div>
-          <div class="big-num">&#8377;<span id="today">486</span></div>
-          <div class="mini-sub">after bills and planned buys</div>
-        </div>
-        <div class="mini" data-card aria-hidden="true">
-          <div class="mini-head">This month <span class="tag">17 days</span></div>
-          <div class="days" id="days"></div>
-          <div class="mini-sub">days your money lasted</div>
-        </div>
-        <div class="mini" data-card aria-hidden="true">
-          <div class="mini-head">Hisaab <span style="font-weight:400;color:var(--ink-soft)">now</span></div>
-          <div class="ask-q">&#8377;120 paid. What was that for?</div>
-          <div class="ask-input"><span id="typed">lunch with friends</span><span class="caret"></span></div>
+      <div class="hx-copy">
+        <p class="hx-eyebrow" data-in="up">01. YOUR DAILY NUMBER</p>
+        <h1 id="headline">Know what you can spend today.</h1>
+        <p class="hx-lede" data-in="up">Hisaab takes out your bills and planned buys first, then splits the rest over the days left in the month. Everything stays on your phone.</p>
+        <div class="hx-actions">
+          <a class="pill btn-mint" data-wipe href="mailto:shikharkansal.sk@gmail.com?subject=Notify%20me%20about%20Hisaab">Tell me when it's out</a>
+          <a class="pill btn-glass glass" data-wipe href="#how">See how it works</a>
         </div>
       </div>
-      <p class="example">Example screens with made-up numbers.</p>
-    </div>
 
-    <div class="scene" aria-hidden="true">
-      <svg viewBox="0 0 1600 500" preserveAspectRatio="xMidYMax slice">
-        <circle cx="1180" cy="150" r="70" fill="#fff" opacity="0.55"/>
-        <path id="hill-back" d="M0 300 C220 230 380 250 560 290 S900 220 1100 260 S1420 230 1600 270 V500 H0Z" fill="#b8e3d0"/>
-        <path id="hill-mid" d="M0 360 C180 320 340 330 520 370 S860 310 1080 350 S1400 320 1600 350 V500 H0Z" fill="#7fd1ad"/>
-        <g id="tree-left" fill="#138a5e">
-          <rect x="196" y="250" width="10" height="90" rx="4" fill="#2d5a4c"/>
-          <circle cx="201" cy="236" r="40"/><circle cx="172" cy="262" r="26"/><circle cx="232" cy="258" r="28"/>
-        </g>
-        <g id="tree-right" fill="#1f9e6d">
-          <rect x="1390" y="236" width="12" height="110" rx="4" fill="#2d5a4c"/>
-          <circle cx="1396" cy="214" r="50"/><circle cx="1356" cy="248" r="30"/><circle cx="1436" cy="244" r="34"/>
-        </g>
-        <path id="hill-front" d="M0 420 C240 390 420 400 640 430 S1020 390 1260 415 S1480 400 1600 410 V500 H0Z" fill="#3fbf8c"/>
-      </svg>
+      <aside class="chamfer" data-in="left" aria-label="Status">
+        <span class="badge">IN PRIVATE TESTING</span>
+        <div class="body">
+          <svg viewBox="0 0 300 150" preserveAspectRatio="none" aria-hidden="true"><polygon points="0.5,0.5 299.5,0.5 299.5,149.5 26,149.5 0.5,124" fill="none" stroke="#5be3ad" vector-effect="non-scaling-stroke"/></svg>
+          <p>Coming soon to Google Play. The iPhone version is in the works. Your money data never leaves your phone.</p>
+          <a href="privacy/">READ THE PRIVACY POLICY &rarr;</a>
+        </div>
+      </aside>
     </div>
   </header>
 
